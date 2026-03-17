@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://pr-digitech-app.onrender.com/api',
 });
 
 // Attach JWT token to every request if present
