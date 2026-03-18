@@ -8,7 +8,7 @@ const plans = [
   {
     name: 'Starter', monthly: 15000, annual: 12000, color: 'default',
     desc: 'Perfect for startups getting their first PR push.',
-    features: ['3 press releases/month','Media outreach to 20 journalists','Basic SEO audit','Monthly report','Email support','Brand positioning guide'],
+    features: ['3 press releases/month','Media outreach to 4 journalist','Basic SEO audit','Monthly report','Email support','Brand positioning guide'],
     cta: 'Get Started',
   },
   {
