@@ -1,0 +1,18 @@
+.footer { background: #050505; border-top: 1px solid #222; padding: 4rem 5rem 2rem; }
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid #222; }
+.footer-logo { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 800; color: #fff; text-decoration: none; }
+.footer-logo span { color: #f26419; }
+.footer-brand p { color: #888; font-size: 0.85rem; line-height: 1.7; font-weight: 300; max-width: 240px; margin-top: 1rem; }
+.footer-social { display: flex; gap: 0.7rem; margin-top: 1.5rem; }
+.social-btn { width: 34px; height: 34px; border: 1px solid #2a2a2a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #888; text-decoration: none; font-size: 0.72rem; font-weight: 700; transition: all 0.2s; cursor: none; }
+.social-btn:hover { border-color: #f26419; color: #f26419; }
+.footer-col h4 { font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-col a { color: #888; text-decoration: none; font-size: 0.85rem; font-weight: 300; transition: color 0.2s; }
+.footer-col a:hover { color: #f26419; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { color: #444; font-size: 0.78rem; }
+.footer-copy a { color: #444; text-decoration: none; transition: color 0.2s; }
+.footer-copy a:hover { color: #f26419; }
+@media (max-width: 900px) { .footer { padding: 3rem 1.5rem 2rem; } .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }

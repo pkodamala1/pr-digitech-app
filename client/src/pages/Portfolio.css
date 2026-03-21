@@ -1,0 +1,19 @@
+.portfolio-page { padding-top: 64px; }
+.portfolio-header { padding: 5rem 5rem 3rem; border-bottom: 1px solid #1a1a1a; }
+.portfolio-header p { color: #888; margin-top: 1rem; font-size: 1rem; }
+.port-filters { padding: 2rem 5rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.filter-btn { background: #141414; color: #888; border: 1px solid #222; border-radius: 50px; padding: 0.45rem 1.2rem; cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; font-family: 'Manrope', sans-serif; }
+.filter-btn:hover, .filter-btn.active { background: #f26419; color: #000; border-color: #f26419; }
+.port-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; padding: 0 5rem 4rem; }
+.port-card { background: #141414; border: 1px solid #1e1e1e; border-radius: 20px; padding: 2rem; transition: all 0.25s; }
+.port-card:hover { border-color: rgba(242,100,25,0.35); transform: translateY(-4px); }
+.port-cat { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #f26419; background: rgba(242,100,25,0.1); border: 1px solid rgba(242,100,25,0.2); border-radius: 50px; padding: 0.2rem 0.7rem; display: inline-block; margin-bottom: 1rem; }
+.port-card h3 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+.port-card p { color: #888; font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.2rem; }
+.port-result { color: #22c55e; font-size: 0.82rem; font-weight: 600; }
+.publications { padding: 3rem 5rem 5rem; border-top: 1px solid #1a1a1a; }
+.pub-label { color: #444; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: 1.5rem; }
+.pub-logos { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.pub-item { background: #141414; border: 1px solid #1e1e1e; border-radius: 10px; padding: 0.6rem 1.5rem; color: #555; font-size: 0.82rem; font-weight: 600; }
+@media (max-width: 900px) { .port-grid { grid-template-columns: 1fr 1fr; padding: 0 1.5rem 3rem; } .portfolio-header, .port-filters, .publications { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (max-width: 560px) { .port-grid { grid-template-columns: 1fr; } }

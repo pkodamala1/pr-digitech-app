@@ -1,0 +1,69 @@
+.admin-layout { display: flex; min-height: 100vh; background: #0a0a0a; }
+
+/* Sidebar */
+.admin-sidebar {
+  width: 240px; min-height: 100vh; background: #0d0d0d;
+  border-right: 1px solid #1a1a1a; display: flex; flex-direction: column;
+  transition: width 0.3s; flex-shrink: 0; position: sticky; top: 0; height: 100vh;
+}
+.admin-layout.collapsed .admin-sidebar { width: 64px; }
+
+.sidebar-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 1rem; border-bottom: 1px solid #1a1a1a; height: 64px;
+}
+.sidebar-logo { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 800; white-space: nowrap; overflow: hidden; }
+.sidebar-logo span { color: #f26419; }
+.collapse-btn { background: #1a1a1a; border: 1px solid #2a2a2a; color: #888; border-radius: 6px; width: 26px; height: 26px; cursor: pointer; font-size: 0.75rem; transition: all 0.2s; flex-shrink: 0; }
+.collapse-btn:hover { color: #f26419; border-color: #f26419; }
+
+.sidebar-nav { flex: 1; padding: 1rem 0.5rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 0.8rem;
+  padding: 0.75rem 0.85rem; border-radius: 10px; text-decoration: none;
+  color: #666; font-size: 0.875rem; font-weight: 500; transition: all 0.2s; white-space: nowrap;
+}
+.sidebar-link:hover { background: #1a1a1a; color: #fff; }
+.sidebar-link.active { background: rgba(242,100,25,0.12); color: #f26419; }
+.link-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.sidebar-footer { padding: 1rem 0.75rem; border-top: 1px solid #1a1a1a; }
+.sidebar-user { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.75rem; overflow: hidden; }
+.user-avatar { width: 32px; height: 32px; background: linear-gradient(135deg, #f26419, #ff8c42); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.8rem; color: #000; flex-shrink: 0; }
+.user-name { font-size: 0.82rem; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.user-role { font-size: 0.7rem; color: #666; text-transform: capitalize; }
+.logout-btn { width: 100%; background: #1a1a1a; border: 1px solid #2a2a2a; color: #888; border-radius: 8px; padding: 0.5rem; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; white-space: nowrap; }
+.logout-btn:hover { color: #f26419; border-color: #f26419; }
+
+/* Main */
+.admin-main { flex: 1; overflow: auto; display: flex; flex-direction: column; min-width: 0; }
+.admin-topbar { height: 64px; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; background: #0d0d0d; flex-shrink: 0; }
+.view-site-btn { color: #888; font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+.view-site-btn:hover { color: #f26419; }
+.topbar-user { color: #888; font-size: 0.82rem; }
+.admin-content { padding: 2rem; flex: 1; }
+
+/* Shared admin components */
+.admin-page-title { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; }
+.admin-page-sub { color: #666; font-size: 0.88rem; margin-bottom: 2rem; }
+.admin-card { background: #141414; border: 1px solid #1e1e1e; border-radius: 16px; padding: 1.5rem; }
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.admin-table th { text-align: left; color: #666; font-weight: 600; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.75rem 1rem; border-bottom: 1px solid #1e1e1e; }
+.admin-table td { padding: 0.9rem 1rem; border-bottom: 1px solid #1a1a1a; color: #ccc; vertical-align: middle; }
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: #181818; }
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; }
+.badge-new     { background: rgba(242,100,25,0.15); color: #f26419; }
+.badge-read    { background: rgba(34,197,94,0.12);  color: #22c55e; }
+.badge-replied { background: rgba(79,142,247,0.12); color: #4f8ef7; }
+.badge-draft   { background: rgba(255,255,255,0.06); color: #888; }
+.badge-published { background: rgba(34,197,94,0.12); color: #22c55e; }
+.action-btn { background: none; border: 1px solid #2a2a2a; color: #888; border-radius: 6px; padding: 0.3rem 0.7rem; font-size: 0.75rem; cursor: pointer; transition: all 0.2s; }
+.action-btn:hover { border-color: #f26419; color: #f26419; }
+.action-btn.danger:hover { border-color: #ef4444; color: #ef4444; }
+
+@media (max-width: 768px) {
+  .admin-sidebar { position: fixed; z-index: 100; height: 100vh; transform: translateX(-100%); }
+  .admin-sidebar.mobile-open { transform: translateX(0); }
+  .admin-content { padding: 1rem; }
+}
