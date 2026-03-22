@@ -62,31 +62,28 @@ function AppRoutes() {
   return (
     <>
       <Routes>
-      {/* Public */}
-      <Route path="/"               element={<Home />} />
-      <Route path="/about"          element={<About />} />
-      <Route path="/contact"        element={<Contact />} />
-      <Route path="/blog"           element={<Blog />} />
-      <Route path="/blog/:slug"     element={<BlogPost />} />
-      <Route path="/portfolio"      element={<Portfolio />} />
-      <Route path="/pricing"        element={<Pricing />} />
-      <Route path="/ai-technology"  element={<AITechnology />} />
-      <Route path="/case-studies"   element={<CaseStudies />} />
-
-      {/* Admin auth */}
-      <Route path="/admin/login"    element={<AdminLogin />} />
-
-      {/* Admin protected */}
-      <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-        <Route index                  element={<Dashboard />} />
-        <Route path="contacts"        element={<AdminContacts />} />
-        <Route path="blog"            element={<AdminBlog />} />
-        <Route path="blog/new"        element={<AdminBlogEdit />} />
-        <Route path="blog/edit/:id"   element={<AdminBlogEdit />} />
-      </Route>
-
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        {/* Public */}
+        <Route path="/"               element={<Home />} />
+        <Route path="/about"          element={<About />} />
+        <Route path="/contact"        element={<Contact />} />
+        <Route path="/blog"           element={<Blog />} />
+        <Route path="/blog/:slug"     element={<BlogPost />} />
+        <Route path="/portfolio"      element={<Portfolio />} />
+        <Route path="/pricing"        element={<Pricing />} />
+        <Route path="/ai-technology"  element={<AITechnology />} />
+        <Route path="/case-studies"   element={<CaseStudies />} />
+        {/* Admin auth */}
+        <Route path="/admin/login"    element={<AdminLogin />} />
+        {/* Admin protected */}
+        <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+          <Route index                  element={<Dashboard />} />
+          <Route path="contacts"        element={<AdminContacts />} />
+          <Route path="blog"            element={<AdminBlog />} />
+          <Route path="blog/new"        element={<AdminBlogEdit />} />
+          <Route path="blog/edit/:id"   element={<AdminBlogEdit />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <NewsletterPopup />
     </>
   );
