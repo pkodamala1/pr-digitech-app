@@ -45,11 +45,13 @@ export default function NewsletterPopup() {
   return (
     <div className="np-overlay" onClick={e => e.target === e.currentTarget && close()}>
       <div className="np-modal">
-        <button className="np-close" onClick={close}>X</button>
+        <button className="np-close" onClick={close}>✕</button>
+
+        {/* Dark header */}
         <div className="np-header">
-          <div className="np-tag">Digital Marketing Report - March 2026</div>
+          <div className="np-tag">Digital Marketing Report — March 2026</div>
           <h2 className="np-title">Digital Marketing Industry Roundup.</h2>
-          <p className="np-subtitle">Google AI updates, top PR strategies, SEO shifts and geo-targeting breakthroughs - summarised for you.</p>
+          <p className="np-subtitle">Google AI updates, top PR strategies, SEO shifts and geo-targeting breakthroughs — summarised for you.</p>
           <div className="np-previews">
             <div className="np-pcard np-dk">
               <div className="np-pi"><div className="np-pl np-pd" /><div className="np-pl np-pd np-ps" /><div className="np-thumb"><span>HOW TO GROW</span></div></div>
@@ -73,15 +75,17 @@ export default function NewsletterPopup() {
             </div>
           </div>
         </div>
+
+        {/* Form or success */}
         {submitted ? (
           <div className="np-success">
-            <div className="np-sicon">OK</div>
-            <h3>You are in!</h3>
-            <p>Check your inbox - your digital marketing roundup is on its way!</p>
+            <div className="np-sicon">✓</div>
+            <h3>You're in!</h3>
+            <p>Check your inbox — your digital marketing roundup is on its way!</p>
           </div>
         ) : (
           <form className="np-body" onSubmit={onSubmit}>
-            <div className="np-form-title">Get it sent to your inbox - it is free</div>
+            <div className="np-form-title">Get it sent to your inbox — it's free</div>
             <div className="np-form-sub">Join 2,000+ founders and marketers who read this every month.</div>
             <div className="np-fields">
               <div className="np-row">
@@ -91,21 +95,22 @@ export default function NewsletterPopup() {
               <div className="np-field"><label className="np-label">Company Email</label><input className="np-inp" type="email" name="email" value={form.email} onChange={onChange} placeholder="you@company.com" required /></div>
               <div className="np-row">
                 <div className="np-field"><label className="np-label">Website URL</label><input className="np-inp" name="website" value={form.website} onChange={onChange} placeholder="www.yoursite.com" /></div>
-                <div className="np-field"><label className="np-label">Monthly Budget</label><input className="np-inp" name="budget" value={form.budget} onChange={onChange} placeholder="e.g. 50,000" /></div>
+                <div className="np-field"><label className="np-label">Monthly Budget</label><input className="np-inp" name="budget" value={form.budget} onChange={onChange} placeholder="e.g. ₹50,000" /></div>
               </div>
               <div className="np-field">
                 <label className="np-label">Phone Number</label>
                 <div className="np-phone">
                   <div className="np-flag-wrap" ref={dropRef}>
                     <button type="button" className="np-flag-btn" onClick={() => setDropOpen(!dropOpen)}>
-                      <span className="np-dial">{country.flag} {country.dial}</span>
-                      <span className="np-caret">v</span>
+                      <span className="np-flag">{country.flag}</span>
+                      <span className="np-dial">{country.dial}</span>
+                      <span className="np-caret">▼</span>
                     </button>
                     {dropOpen && (
                       <div className="np-dropdown">
                         {countries.map(c => (
                           <div key={c.dial} className="np-drop-item" onClick={() => { setCountry(c); setDropOpen(false); }}>
-                            <span>{c.flag}</span>
+                            <span className="np-flag">{c.flag}</span>
                             <span>{c.name}</span>
                             <span className="np-dial-sm">{c.dial}</span>
                           </div>
@@ -121,10 +126,11 @@ export default function NewsletterPopup() {
             </div>
           </form>
         )}
+
         <div className="np-footer">
-          <span className="np-fi">No spam, ever</span>
-          <span className="np-fi">Unsubscribe anytime</span>
-          <span className="np-fi">100% free</span>
+          <span className="np-fi"><span className="np-dot" /> No spam, ever</span>
+          <span className="np-fi"><span className="np-dot" /> Unsubscribe anytime</span>
+          <span className="np-fi"><span className="np-dot" /> 100% free</span>
         </div>
       </div>
     </div>
