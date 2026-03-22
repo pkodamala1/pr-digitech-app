@@ -13,6 +13,7 @@ import Portfolio     from './pages/Portfolio';
 import Pricing       from './pages/Pricing';
 import AITechnology  from './pages/AITechnology';
 import CaseStudies   from './pages/CaseStudies';
+import NewsletterPopup from './components/NewsletterPopup';
 import NotFound      from './pages/NotFound';
 
 // Admin pages
@@ -59,7 +60,8 @@ const Cursor = () => {
 
 function AppRoutes() {
   return (
-    <Routes>
+    <>
+      <Routes>
       {/* Public */}
       <Route path="/"               element={<Home />} />
       <Route path="/about"          element={<About />} />
@@ -85,6 +87,8 @@ function AppRoutes() {
 
       <Route path="*" element={<NotFound />} />
     </Routes>
+      <NewsletterPopup />
+    </>
   );
 }
 
